@@ -8,7 +8,7 @@
   "keywords": [],
   "files": [
     "dist",
-    "tempalte",
+    "template",
     "bin.js"
   ],
   "publishConfig": {
