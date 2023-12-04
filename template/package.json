@@ -1,0 +1,38 @@
+{
+	"name": "new-duplojs-project",
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "nodemon --exec 'node --require sucrase/register main.ts'",
+		"dev-debug": "nodemon --exec 'ts-node main.ts'",
+		"start": "node --require sucrase/register main.ts",
+		"lint": "eslint --fix **/**.ts"
+	},
+	"dependencies": {
+		"@duplojs/duplojs": "0.13.23",
+		"@duplojs/routes-directory": "0.2.2",
+		"@duplojs/type-input": "0.1.0",
+		"@duplojs/destruct-floor": "0.1.2",
+		"@duplojs/http-exception": "0.1.0",
+		"@duplojs/multipart": "0.2.5",
+		"@duplojs/cors": "0.1.2",
+		"@duplojs/swagger": "0.1.0",
+		"@duplojs/cookie": "0.3.6",
+		"@duplojs/static": "0.2.2"
+	},
+	"devDependencies": {
+		"@types/node": "^18.15.11",
+		"@typescript-eslint/eslint-plugin": "^6.0.0",
+		"@typescript-eslint/parser": "^6.0.0",
+		"autocannon": "^7.11.0",
+		"eslint": "^8.45.0",
+		"nodemon": "^3.0.1",
+		"sucrase": "^3.34.0",
+		"ts-node": "^10.9.1",
+		"tslib": "^2.5.0",
+		"typescript": "^5.0.2"
+	},
+	"nodemonConfig": {
+		"ext": ".ts"
+	}
+}
+  

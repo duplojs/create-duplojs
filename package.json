@@ -6,27 +6,21 @@
   "repository": "https://github.com/duplojs/duplojs-create",
   "license": "ISC",
   "keywords": [],
-  "types": "./types/scripts/.ts",
-  "exports": {
-    "default": {
-      "import": "./dist/.mjs",
-      "require": "./dist/.cjs"
-    }
-  },
   "files": [
     "dist",
-    "types"
+    "tempalte",
+    "bin.js"
   ],
   "publishConfig": {
     "access": "public"
   },
+  "bin": {
+    "create-duplojs": "bin.js"
+  },
   "scripts": {
-    "dev": "nodemon --exec 'ts-node --transpiler sucrase/ts-node-plugin test'",
-    "build": "rollup --config && npx tsc"
+    "build": "rollup --config"
   },
   "devDependencies": {
-    "@duplojs/worker-testing": "^0.1.5",
-    "@rollup/plugin-json": "^6.0.1",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
