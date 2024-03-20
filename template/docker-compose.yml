@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  duplojs-installer:
+    image: node:20.11.1
+    volumes:
+      - ./:/home/node/duplojs
+    environment:
+      npm_config_cache: /home/node/cache
+    working_dir: /home/node/duplojs
+    user: 1000:1000
+    command: npm i
+  
+  duplojs:
+    image: node:20.11.1
+    volumes:
+      - ./:/home/node/duplojs
+    environment:
+      npm_config_cache: /home/node/cache
+    working_dir: /home/node/duplojs
+    user: 1000:1000
+    command: npm run dev
+    ports:
+      - 1506:1506
+    depends_on:
+      duplojs-installer:
+        condition: service_completed_successfully
