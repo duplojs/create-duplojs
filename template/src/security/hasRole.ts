@@ -1,18 +1,18 @@
-import { zod } from "@duplojs/duplojs";
-
 export const hasRoleSecurity = duplo
-	.declareAbstractRoute("isAdmin")
-	.options<{role?: "admin" | "user"}>({})
+	.declareAbstractRoute("hasRole")
+	.options<{ role?: "admin" | "user" }>({})
 	.extract({
 		headers: {
-			role: zod.enum(["admin", "user"]).default("user")
+			role: zod.enum(["admin", "user"]).default("user").ignore()
 		},
 	})
-	.cut(   
-		({pickup}) => {
-			if(pickup("role") !== pickup("options").role){
+	.cut(
+		({ pickup }) => {
+			if (pickup("role") !== pickup("options").role) {
 				throw new UnauthorizedHttpException("role.wrong");
 			}
+
+			return {};
 		},
 		undefined,
 		new IHaveSentThis(UnauthorizedHttpException.code, "role.wrong")
