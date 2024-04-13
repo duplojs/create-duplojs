@@ -1,12 +1,17 @@
 import { config as importEnvFile } from "dotenv";
+import { expand as expandEnv } from "dotenv-expand";
 import { zod } from "@duplojs/duplojs";
 
 declare global {
     const ENV: typeof import("./env")["default"];
 }
 
-importEnvFile({path: ".env.local"});
-importEnvFile({path: ".env"});
+
+for(const pathEnv of [".env.local", ".env"]){
+	expandEnv(
+		importEnvFile({ path: pathEnv })
+	);
+}
 
 //@ts-expect-error var 'global' cause type error.
 export default global.ENV = zod
