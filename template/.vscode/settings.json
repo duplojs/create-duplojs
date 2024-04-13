@@ -1,5 +1,4 @@
 {
-
 	"editor.tabSize": 4,
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
@@ -10,8 +9,15 @@
 		"editor.tabSize": 2,
 		"editor.insertSpaces": true,
 	},
+
+	"[json]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true,
+	},
     
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
 	},
+	"eslint.experimental.useFlatConfig": true,
+	"eslint.validate": ["javascript"],
 }

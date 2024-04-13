@@ -1,4 +1,4 @@
 node_modules
 swagger.json
-.env
 .env.local
+EnrichedDuploTo.d.ts

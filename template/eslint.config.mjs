@@ -14,6 +14,19 @@ export default tseslint.config(
 			"quotes": ["error", "double"],
 			"indent": ["error", "tab"],
 			"max-len": ["error", { "code": 120 }],
+			"object-curly-newline": [
+				"error", 
+				{
+					"ObjectExpression": { 
+						"consistent": true, 
+						"multiline": true, 
+						"minProperties": 4 
+					}
+				}
+			],
+			"object-curly-spacing": ["error", "always"],
+			"array-bracket-newline": ["error", { "multiline": true, "minItems": 4 }],
+			"array-bracket-spacing": ["error", "never"],
 		},
 	},
 );
