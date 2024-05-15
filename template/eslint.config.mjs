@@ -1,5 +1,3 @@
-// @ts-check
-
 import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
 export default tseslint.config(
@@ -13,7 +11,8 @@ export default tseslint.config(
 			"no-extra-semi": "error",
 			"quotes": ["error", "double"],
 			"indent": ["error", "tab"],
-			"max-len": ["error", { "code": 120 }],
+			"max-len": ["error", {"code": 120, "ignoreStrings": true, "ignoreTemplateLiterals": true}],
+			"@typescript-eslint/no-extraneous-class": "off",
 			"object-curly-newline": [
 				"error", 
 				{
@@ -25,8 +24,9 @@ export default tseslint.config(
 				}
 			],
 			"object-curly-spacing": ["error", "always"],
-			"array-bracket-newline": ["error", { "multiline": true, "minItems": 4 }],
+			"array-bracket-newline": ["error", {"multiline": true, "minItems": 4}],
 			"array-bracket-spacing": ["error", "never"],
-		},
+			"key-spacing": ["error", {"beforeColon": false}],
+		}
 	},
 );
