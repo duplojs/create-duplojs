@@ -3,7 +3,7 @@ import duploHttpException from "@duplojs/http-exception";
 import duploRoutesDirectory, { matchScriptFile } from "@duplojs/routes-directory";
 import duploSwagger from "@duplojs/swagger";
 import duploWhatWasSent from "@duplojs/what-was-sent";
-import { ZodAccelerator } from "@duplojs/zod-accelerator";
+import duploZodAccelerator from "@duplojs/zod-accelerator/plugin";
 import duploTypeGenerator from "@duplojs/to/plugin";
 import "./env";
 
@@ -44,7 +44,7 @@ duplo.advancedUse(
 duplo.use(duploHttpException, { globals: true });
 
 duplo.use(
-	ZodAccelerator.duplojs,
+	duploZodAccelerator,
 	{
 		DEV: true,
 		PROD: true
